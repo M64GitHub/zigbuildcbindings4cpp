@@ -9,6 +9,5 @@ c++ -shared sid.o sid_wrapper.o -o libsid.so
 
 # zig build-exe main.zig -L. -lsid -lstdc++
 zig build-exe src/main.zig -I. -L. -lsid -lstdc++ --name zigsid_wrapper
-# 
 
 

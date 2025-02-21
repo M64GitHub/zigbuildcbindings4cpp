@@ -17,7 +17,7 @@ int main() {
 }
 
 /*
-Compilation steps (example):
+Compilation steps:
 
 # Compile C++ SID library
 c++ -fPIC -c sid.cpp -o sid.o
