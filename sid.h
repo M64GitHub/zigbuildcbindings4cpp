@@ -1,4 +1,4 @@
-// sid.h (C++ header)
+// sid.h (C++ header) - ORIGINAL FILE (UNTOUCHED)
 #ifndef SID_H
 #define SID_H
 

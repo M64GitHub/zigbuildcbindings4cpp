@@ -1,6 +1,6 @@
-// sid_c_wrapper.h (C header for C compatibility)
-#ifndef SID_C_WRAPPER_H
-#define SID_C_WRAPPER_H
+// sid_wrapper.h (C header for C compatibility) - NEW WRAPPER FILE
+#ifndef SID_WRAPPER_H
+#define SID_WRAPPER_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -19,5 +19,5 @@ const char* SID_getName(SID* sid);
 }
 #endif
 
-#endif // SID_C_WRAPPER_H
+#endif // SID_WRAPPER_H
 //
