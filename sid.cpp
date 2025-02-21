@@ -3,15 +3,15 @@
 #include <iostream>
 
 SID::SID(const std::string &name) : name(name) {
-    std::cout << "SID instance '" << name << "' created.\\n";
+    std::cout << "SID instance '" << name << "' created.\n";
 }
 
 SID::~SID() {
-    std::cout << "SID instance '" << name << "' destroyed.\\n";
+    std::cout << "SID instance '" << name << "' destroyed.\n";
 }
 
 void SID::playNote(int note) {
-    std::cout << "Playing note " << note << " on SID '" << name << "'.\\n";
+    std::cout << "Playing note " << note << " on SID '" << name << "'.\n";
 }
 
 std::string SID::getName() const {
