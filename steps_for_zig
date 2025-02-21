@@ -7,6 +7,8 @@ c++ -fPIC -c sid_wrapper.cpp -o sid_wrapper.o
 # Create a shared library with both object files
 c++ -shared sid.o sid_wrapper.o -o libsid.so
 
-zig build-exe main.zig -L. -lsid -lstdc++
+# zig build-exe main.zig -L. -lsid -lstdc++
+zig build-exe main.zig -I. -L. -lsid -lstdc++
+# 
 
 
