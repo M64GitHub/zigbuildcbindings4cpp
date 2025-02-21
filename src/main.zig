@@ -8,13 +8,13 @@ pub fn main() !void {
 
     const sid = c.SID_create("MyZigSID");
     if (sid == null) {
-        try stdout.print("Failed to create SID instance.\\n", .{});
+        try stdout.print("Failed to create SID instance.\n", .{});
         return;
     }
 
-    const name = c.SID_getName(sid.?);
-    try stdout.print("SID instance name: {s}\\n", .{name});
+    const name = c.SID_getName(sid);
+    try stdout.print("SID instance name: {s}\n", .{name});
 
-    c.SID_playNote(sid.?, 42);
-    c.SID_destroy(sid.?);
+    c.SID_playNote(sid, 42);
+    c.SID_destroy(sid);
 }

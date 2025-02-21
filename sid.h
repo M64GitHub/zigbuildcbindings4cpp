@@ -1,4 +1,4 @@
-// sid.h (C++ header) - ORIGINAL FILE (UNTOUCHED)
+// sid.h (C++ header) - AS EXAMPLE FOR  A C++ LIB ORIGINAL FILE (UNTOUCHED)
 #ifndef SID_H
 #define SID_H
 
@@ -10,11 +10,10 @@ public:
     ~SID();
 
     void playNote(int note);
-    std::string getName() const;
+    const char *getName() const;
 
 private:
-    std::string name;
+    std::string my_name;
 };
 
 #endif // SID_H
-//

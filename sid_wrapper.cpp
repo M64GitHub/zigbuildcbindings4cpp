@@ -1,4 +1,4 @@
-// sid_wrapper.cpp (C++ wrapper implementation) - NEW WRAPPER FILE
+// sid_wrapper.cpp (C++ wrapper implementation) - NEW WRAPPER FILE ADDED TO LIB
 #include "sid_wrapper.h"
 #include "sid.h"
 
@@ -16,6 +16,6 @@ extern "C" {
     }
 
     const char* SID_getName(SID* sid) {
-        return sid->getName().c_str(); // NOTE: For demo purposes only.
+        return sid->getName();
     }
 }
