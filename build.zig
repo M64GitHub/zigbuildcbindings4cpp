@@ -32,6 +32,7 @@ pub fn build(b: *std.Build) void {
             "resid/wave8580__ST.cc",
             "resid/wave.cc",
             "resid.cpp",
+            "resid-dmpplayer.cpp",
             "resid_wrapper.cpp",
         },
         .flags = &.{ "-x", "c++", "-std=c++17", "-DVERSION=\"lala\"" },

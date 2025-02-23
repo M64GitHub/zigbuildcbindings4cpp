@@ -1,22 +1,26 @@
 const std = @import("std");
-const c = @cImport({
-    @cInclude("resid_wrapper.h");
-});
+const ReSID = @import("resid.zig").ReSID;
+const ReSIDDmpPlayer = @import("resid.zig").ReSIDDmpPlayer;
 
 pub fn main() !void {
     const stdout = std.io.getStdOut().writer();
 
-    const resid = c.ReSID_create("MyZIGSID");
-    if (resid == null) {
-        try stdout.print("Failed to create SID instance.\n", .{});
-        return;
+    // Create and initialize ReSID object
+    var resid = try ReSID.init("MyZIGSID");
+    defer resid.deinit();
+
+    resid.setDBGOutput(true);
+    _ = resid.setChipModel("MOS6581");
+
+    try stdout.print("SID instance name: {s}\\n", .{resid.getName()});
+
+    // Create and use ReSIDDmpPlayer object
+    var player = try ReSIDDmpPlayer.init(resid.ptr);
+    defer player.deinit();
+
+    player.play();
+    while (true) {
+        player.update();
+        // Add playback logic or break conditions if needed
     }
-
-    c.ReSID_setDBGOutput(resid, true);
-    _ = c.ReSID_setChipModel(resid, "MOS6581");
-
-    const name = c.ReSID_getName(resid);
-    try stdout.print("SID instance name: {s}\n", .{name});
-
-    c.ReSID_destroy(resid);
 }

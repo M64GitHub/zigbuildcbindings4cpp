@@ -10,10 +10,11 @@ ReSID::ReSID(const char *n) : dbg_output(false)
     if(dbg_output) printf("[ReSID::%s] ReSID initializing ...\n", name);
 
     sid.set_sampling_parameters(985248, SAMPLE_RESAMPLE_INTERPOLATE, 44100);
+
     SetChipModel(MOS8580);
-    sid.set_chip_model(MOS8580);
 
     precalc_constants();
+
     if(dbg_output) printf("[ReSID::%s] ReSID initialized\n", name);
 }
 

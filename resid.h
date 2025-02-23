@@ -7,20 +7,6 @@
 #include "resid/sid.h"
 #include "resid/siddefs.h"
 
-typedef struct S_ReSIDPbData {
-    short buf1[CFG_AUDIO_BUF_SIZE+1];
-    short buf2[CFG_AUDIO_BUF_SIZE+1];
-    short *buf_playing = 0;
-    short *buf_next = 0;
-    char buf_consumed = 0;
-    char buf_lock = 0;
-    char play = 0;
-    unsigned long stat_cnt = 0;
-    unsigned long stat_bufwrites = 0;
-    unsigned long stat_buf_underruns = 0;
-    unsigned long stat_framectr = 0;
-} ReSIDPbData;
-
 class ReSID 
 {
 public:
