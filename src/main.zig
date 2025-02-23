@@ -1,20 +1,22 @@
 const std = @import("std");
 const c = @cImport({
-    @cInclude("sid_wrapper.h");
+    @cInclude("resid_wrapper.h");
 });
 
 pub fn main() !void {
     const stdout = std.io.getStdOut().writer();
 
-    const sid = c.SID_create("MyZigSID");
-    if (sid == null) {
+    const resid = c.ReSID_create("MyZIGSID");
+    if (resid == null) {
         try stdout.print("Failed to create SID instance.\n", .{});
         return;
     }
 
-    const name = c.SID_getName(sid);
+    c.ReSID_setDBGOutput(resid, true);
+    _ = c.ReSID_setChipModel(resid, "MOS6581");
+
+    const name = c.ReSID_getName(resid);
     try stdout.print("SID instance name: {s}\n", .{name});
 
-    c.SID_playNote(sid, 42);
-    c.SID_destroy(sid);
+    c.ReSID_destroy(resid);
 }

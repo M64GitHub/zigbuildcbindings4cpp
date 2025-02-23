@@ -2,18 +2,24 @@
 #ifndef SID_WRAPPER_H
 #define SID_WRAPPER_H
 
+#include <stdbool.h>
+
 #ifdef __cplusplus
 extern "C" {
 #endif
 
 // Opaque type for SID object
-typedef struct SID SID;
+typedef struct ReSID ReSID;
 
 // C-compatible interface
-SID* SID_create(const char* name);
-void SID_destroy(SID* sid);
-void SID_playNote(SID* sid, int note);
-const char* SID_getName(SID* sid);
+ReSID* ReSID_create(const char* name);
+void ReSID_destroy(ReSID* resid);
+
+const char* ReSID_getName(ReSID* resid);
+
+void ReSID_setDBGOutput(ReSID *resid, bool b);
+
+bool ReSID_setChipModel(ReSID *resid, const char *m);
 
 #ifdef __cplusplus
 }
